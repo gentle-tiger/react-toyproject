@@ -19,11 +19,12 @@ const StyledButton = styled.button`
   padding: 4px 8px;
   font-weight: bold;
   line-height: 1.2;
-
+  cursor: pointer;
   ${(p) =>
     p.plue &&
     css`
       color: green;
+      background-color: lightgreen;
     `}
 
   ${(p) =>

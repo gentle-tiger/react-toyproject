@@ -1,0 +1,7 @@
+[
+  { "id": 1, "text": "엽기떡볶이(매운맛)", "done": false },
+  { "id": 2, "text": "불닭볶음면", "done": false },
+  { "id": 3, "text": "역전 우동", "done": false },
+  { "id": 4, "text": "햄버거", "done": false },
+  { "id": 5, "text": "오니기리", "done": false }
+]

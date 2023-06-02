@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
 import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 function MainPage() {
   return (
@@ -11,7 +12,7 @@ function MainPage() {
         css={link}
         to="/counter"
         style={({ isActive }) => ({
-          backgroundColor: isActive ? "black" : "green",
+          backgroundColor: isActive ? "black" : "#76FF03",
         })}
       >
         Counter
@@ -25,9 +26,7 @@ function MainPage() {
       >
         TodoList
       </NavLink>
-      <NavLink css={link} to="/expending">
-        ExpendCard
-      </NavLink>
+      <StyledLink to="/expending">ExpendCard</StyledLink>
       <Link css={link} to="/newTodoList">
         NewTodoList
       </Link>
@@ -37,6 +36,13 @@ function MainPage() {
 
 export default MainPage;
 
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #e609e6;
+`;
 const mainPage = css`
   display: flex;
   flex-direction: column;
@@ -50,7 +56,7 @@ const mainPage = css`
 `;
 
 const link = css`
-  background-color: #d1c2a2;
+  background-color: #1de9b6;
   color: black;
   text-decoration: none;
   padding: 4px;
@@ -64,7 +70,7 @@ const activeStyle = {
 };
 
 const deactiveStyle = {
-  backgroundColor: "red",
+  backgroundColor: "#ff0059",
   padding: "5px",
   color: "white",
 };
