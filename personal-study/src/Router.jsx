@@ -5,12 +5,14 @@ import CounterPage from "./pages/CounterPage";
 import MainPage from "./pages/MainPage";
 import ExpendingCardPage from "./pages/ExpendingCardPage";
 import NewTodoListPage from "./pages/NewTodoListPage";
+import TestPage from "./pages/TestPage";
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/test" element={<TestPage />} />
         <Route path="/counter" element={<CounterPage />} />
         <Route path="/todoList" element={<TodoListPage />} />
         <Route path="/expending" element={<ExpendingCardPage />} />

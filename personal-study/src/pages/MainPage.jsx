@@ -8,6 +8,7 @@ function MainPage() {
   return (
     <div css={[mainPage]}>
       <h1>여기는 메인 페이지 입니다.</h1>
+      <Link to="/test">Test</Link>
       <NavLink
         css={link}
         to="/counter"
