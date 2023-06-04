@@ -17,7 +17,8 @@ function ItemAdder({ setList, list }) {
 
   /* input에 입력한 정보를 새로운 배여로 만들어 list에 추가 */
   const handleClickAddInput = () => {
-    if (userInput === "") return;
+    if (userInput === "" || list.length >= 9) return;
+    console.log(list.length);
     setList((prev) => {
       const newId = prev.length === 0 ? 1 : prev[prev.length - 1].id + 1;
 
@@ -46,9 +47,11 @@ function ItemAdder({ setList, list }) {
         value={userInput}
         onChange={handleChangeInput}
         onKeyDown={handleKeyDownEnter}
-        placeholder="업체명 : 음식"
+        placeholder="음식"
       />
-      <Button onClick={handleClickAddInput}>추가</Button>
+      <Button plus onClick={handleClickAddInput}>
+        추가
+      </Button>
     </div>
   );
 }
@@ -65,7 +68,7 @@ const itemAdder = css`
     padding: 16px;
     font-size: 18px;
     border: 1px solid white;
-    background-color: #ef5350;
-    color: white;
+    border-radius: 10px;
+    background-color: #e5ea96;
   }
 `;
