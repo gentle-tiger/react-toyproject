@@ -1,5 +1,5 @@
 import React from "react";
-import NewTodoList from "../newTodolist/NewTodoList";
+import NewTodoList from "../components/newTodolist/NewTodoList";
 import PageBtn from "../components/PageBtn";
 
 function NewTodoListPage() {
