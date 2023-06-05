@@ -73,6 +73,7 @@ const StyledButton = styled.button`
       line-height: 1.6;
       &:hover{
         background: #b3b4b3;
+        transition: background ease 1s 0s;
 
         }
       &:active {

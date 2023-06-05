@@ -3,25 +3,29 @@
 import { jsx, css } from "@emotion/react";
 import styled from "styled-components";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import ItemAdder from "./ItemAdder";
 import TodoItem from "./TodoItem";
-
-fetch("/src/data/NewTodoList.json")
-  .then((res) => res.json())
-  .then((data) => data, []);
-
-const menu = [
-  { id: 1, text: "엽기떡볶이(매운맛)", done: false },
-  { id: 2, text: "불닭볶음면", done: false },
-  { id: 3, text: "역전 우동", done: false },
-  { id: 4, text: "햄버거", done: false },
-  { id: 5, text: "오니기리", done: false },
-];
+// import TODO_LIST from "../data/NewTodoList.json";
 
 function NewTodoList() {
-  const [list, setList] = useState(menu);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos?_limit=5").then((res) =>
+      res.json().then((data) =>
+        setList(
+          data.map(({ id, title: text, complate: done }) => ({
+            id,
+            text,
+            done,
+          }))
+        )
+      )
+    );
+  }, []);
+  // console.log(res.json())
 
   const handleClickReset = () => {
     setList([]);
@@ -52,7 +56,7 @@ function NewTodoList() {
         <h1 css={title}> 여행 계획 : 음식편</h1>
         <ItemAdder setList={setList} list={list} />
 
-        <div css={TodoItemTransiton}>
+        <div>
           {list.map((item) => (
             <TodoItem
               key={item.id}
@@ -121,12 +125,13 @@ const footer = css`
   /* right: 0; */
   color: white;
   background-color: #4ebf97; // 삭제
+
   //
 `;
 
-const TodoItemTransiton = css`
-  transition: all ease 1s 0s;
-`;
+// const TodoItemTransiton = css`
+//   transition: all ease 1s 0s;
+// `;
 
 // const listLength = (list) => {
 //   const count = list.length > 9;

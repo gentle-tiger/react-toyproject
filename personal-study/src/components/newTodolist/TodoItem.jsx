@@ -48,6 +48,7 @@ const todoItem = css`
     flex: 1;
     background-color: #a8e9bb;
     padding: 4px 8px;
+
     cursor: pointer;
     &:hover {
       background-color: #96c4a3;
