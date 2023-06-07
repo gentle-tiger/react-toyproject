@@ -8,7 +8,7 @@ import Colors from "../components/Colors/Colors";
 
 function ColorsPage() {
   return (
-    <div>
+    <div css={colorPageCss}>
       <Colors />
       <PageBtn />
     </div>
@@ -16,3 +16,10 @@ function ColorsPage() {
 }
 
 export default ColorsPage;
+const colorPageCss = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;

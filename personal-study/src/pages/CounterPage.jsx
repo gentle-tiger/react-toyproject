@@ -9,7 +9,7 @@ import PageBtn from "../components/PageBtn";
 
 function CounterPage() {
   return (
-    <div>
+    <div css={counterPageCss}>
       <Counter />
       <PageBtn />
     </div>
@@ -17,3 +17,10 @@ function CounterPage() {
 }
 
 export default CounterPage;
+const counterPageCss = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;

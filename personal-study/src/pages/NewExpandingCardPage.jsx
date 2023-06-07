@@ -3,23 +3,21 @@
 import { jsx, css } from "@emotion/react";
 
 import React from "react";
-import TodoList from "../components/TodoList";
-import MainPage from "./MainPage";
-import { Link } from "react-router-dom";
+import NewExpandingCard from "../components/NewExpandingCard/NewExpandingCard";
 import PageBtn from "../components/PageBtn";
 
-function TodoListPage() {
+function NewExpandingCardPage() {
   return (
-    <div css={todoListPageCss}>
-      <TodoList />
+    <div css={expandingCardCss}>
+      <NewExpandingCard />
       <PageBtn />
     </div>
   );
 }
 
-export default TodoListPage;
+export default NewExpandingCardPage;
 
-const todoListPageCss = css`
+const expandingCardCss = css`
   display: flex;
   flex-direction: column;
   justify-content: center;

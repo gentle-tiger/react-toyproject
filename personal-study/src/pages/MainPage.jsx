@@ -27,9 +27,9 @@ function MainPage() {
       >
         TodoList
       </NavLink>
-      <StyledLink to="/expending">ExpendCard</StyledLink>
-      <StyledLink css={link} to="/newExpending">
-        NewExpendCard
+      <StyledLink to="/expanding">ExpandCard</StyledLink>
+      <StyledLink css={link} to="/newExpanding">
+        NewExpandCard
       </StyledLink>
       <Link css={link} to="/newTodoList">
         NewTodoList
@@ -37,6 +37,7 @@ function MainPage() {
       <Link css={link} to="/colors">
         Colors
       </Link>
+      <Link to="/modal">Modal</Link>
     </div>
   );
 }
