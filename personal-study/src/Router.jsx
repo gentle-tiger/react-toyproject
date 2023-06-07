@@ -6,6 +6,8 @@ import MainPage from "./pages/MainPage";
 import ExpendingCardPage from "./pages/ExpendingCardPage";
 import NewTodoListPage from "./pages/NewTodoListPage";
 import TestPage from "./pages/TestPage";
+import ColorsPage from "./pages/ColorsPage";
+import NewExpendingCardPage from "./pages/NewExpendingCardPage";
 
 function Router() {
   return (
@@ -16,7 +18,9 @@ function Router() {
         <Route path="/counter" element={<CounterPage />} />
         <Route path="/todoList" element={<TodoListPage />} />
         <Route path="/expending" element={<ExpendingCardPage />} />
+        <Route path="/newExpending" element={<NewExpendingCardPage />} />
         <Route path="/newTodoList" element={<NewTodoListPage />} />
+        <Route path="/colors" element={<ColorsPage />} />
       </Routes>
     </BrowserRouter>
   );
