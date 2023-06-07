@@ -2,27 +2,16 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
 import styled from "styled-components";
-
 import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import ItemAdder from "./ItemAdder";
 import TodoItem from "./TodoItem";
-// import TODO_LIST from "../data/NewTodoList.json";
 
 function NewTodoList() {
   const [list, setList] = useState([]);
-
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos?_limit=5").then((res) =>
-      res.json().then((data) =>
-        setList(
-          data.map(({ id, title: text, complate: done }) => ({
-            id,
-            text,
-            done,
-          }))
-        )
-      )
+    fetch("/data/newTodoList.json").then((res) =>
+      res.json().then((data) => setList(data))
     );
   }, []);
   // console.log(res.json())
