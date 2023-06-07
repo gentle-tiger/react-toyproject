@@ -28,8 +28,14 @@ function MainPage() {
         TodoList
       </NavLink>
       <StyledLink to="/expending">ExpendCard</StyledLink>
+      <StyledLink css={link} to="/newExpending">
+        NewExpendCard
+      </StyledLink>
       <Link css={link} to="/newTodoList">
         NewTodoList
+      </Link>
+      <Link css={link} to="/colors">
+        Colors
       </Link>
     </div>
   );
