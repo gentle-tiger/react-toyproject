@@ -16,7 +16,7 @@ import dog5 from "../assets/images/dog5.png";
 const dogImages = [dog1, dog2, dog3, dog4, dog5];
 // const happy = ["행복", "편안함", "즐거움", "외로움", "졸림"];
 
-function ExpendingCard() {
+function ExpandingCard() {
   const [state, setState] = useState(1);
 
   const handleClickImage = (index) => {
@@ -41,12 +41,12 @@ function ExpendingCard() {
     </div>
   );
 }
-export default ExpendingCard;
+export default ExpandingCard;
 
 const imageFlex = css`
   display: flex;
-  width: 90vw;
-  height: 70vh;
+  width: 60vw;
+  height: 40vh;
   gap: 20px;
 `;
 const dogImage = css`
