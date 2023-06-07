@@ -5,7 +5,7 @@ import { jsx, css } from "@emotion/react";
 import React, { useEffect, useState } from "react";
 import ImageCard from "./ImageCard";
 // import CARD_LIST from "../data/cardList.json";
-function NewExpendingCard() {
+function NewExpandingCard() {
   const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function NewExpendingCard() {
   );
 }
 
-export default NewExpendingCard;
+export default NewExpandingCard;
 
 const expendingCardCss = css`
   display: flex;
