@@ -62,7 +62,7 @@ const ImageCss = (index, state) => css`
 
   /* transition: all ease 1s 0s; */
   transition-property: flex;
-  transition-duration: 1s;
+  transition-duration: 0.3s;
   transition-timing-function: ease;
   transition-delay: 0s;
 `;
