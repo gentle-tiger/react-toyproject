@@ -6,15 +6,16 @@ import "./styles/reset.css";
 import TodoList from "./components/TodoList";
 import Counter from "./components/Counter";
 import Router from "./Router";
-// import { Provider } from "react-redux";
-// import store from "./redux/store";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 function App() {
+  console.log("App Reder되었당!!!");
   return (
     <div>
-      {/* <Provider store={store}> */}
-      <Router />
-      {/* </Provider> */}
+      <Provider store={store}>
+        <Router />
+      </Provider>
     </div>
   );
 }

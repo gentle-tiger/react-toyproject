@@ -4,31 +4,36 @@ import { jsx, css } from "@emotion/react";
 
 import ItemAdder from "./ItemAdder";
 import Button from "./Button";
-import React, { useEffect, useState } from "react";
 import TodoItem from "./TodoItem";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { clearList, deleteList, setList } from "../redux/slice/todoListSlice";
 
 function TodoList() {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
-      .then((res) => res.json())
-      .then((data) => {
-        const list = data.map(({ id, title: text, completed: done }) => ({
-          id,
-          text,
-          done,
-        }));
-        setList(list);
-      });
-  }, []);
+  const dispatch = useDispatch();
+  const { list } = useSelector((store) => store.todoList);
+  console.log(list);
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const list = data.map(({ id, title: text, completed: done }) => ({
+  //         id,
+  //         text,
+  //         done,
+  //       }));
+  //       dispatch(setList(list));
+  //     });
+  // }, []);
 
   const handleAllClear = () => {
-    setList([]);
+    dispatch(clearList());
+    //   // setList([]);
   };
   const handleClickDelete = (id) => {
-    const newList = list.filter((item) => item.id !== id);
-    setList(newList);
+    dispatch(deleteList(id));
+    // const newList = list.filter((item) => item.id !== id);
+    // setList(newList);
   };
 
   return (
@@ -47,7 +52,6 @@ function TodoList() {
           />
         ))}
       </div>
-
       <div id="footer">
         <p>{`할 일이 ${list.length}개 밖에 남지 않았어요!`}</p>
         <Button onClick={handleAllClear}>all clear</Button>

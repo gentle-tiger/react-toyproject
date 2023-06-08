@@ -4,8 +4,11 @@ import { jsx, css } from "@emotion/react";
 
 import Button from "./Button";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addList } from "../redux/slice/todoListSlice";
 
 function ItemAdder({ setList }) {
+  const dispatch = useDispatch();
   const [userInput, setUserInput] = useState("");
 
   const handleChangeInput = (e) => {
@@ -17,19 +20,21 @@ function ItemAdder({ setList }) {
   // 왜 이렇게 하는건지 제대로 알아두자.
   const handleClickAdd = () => {
     if (userInput === "") return;
-    setList((prev) => {
-      const newId = prev.length === 0 ? 1 : prev[prev.length - 1].id + 1;
-      const newItem = {
-        id: newId,
-        text: userInput,
-        done: false,
-      };
-      const newList = [...prev, newItem];
-      console.log(newList);
-      return newList;
-    });
+    dispatch(addList(userInput));
     setUserInput("");
   };
+  // redux 하기 전 코드.
+  // setList((prev) => {
+  //   const newId = prev.length === 0 ? 1 : prev[prev.length - 1].id + 1;
+  //   const newItem = {
+  //     id: newId,
+  //     text: userInput,
+  //     done: false,
+  //   };
+  //   const newList = [...prev, newItem];
+  //   console.log(newList);
+  //   return newList;
+  // });
 
   const handleKeyDownEnter = (e) => {
     const { code } = e;
