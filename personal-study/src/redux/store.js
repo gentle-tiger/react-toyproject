@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import todoListSlice from "./slice/todoListSlice";
+import newTodoListSlice from "./slice/newTodoListSlice";
 
 const middlewares = [];
 if (process.env.NODE_ENV === "development") middlewares.push(logger);
@@ -8,6 +9,7 @@ if (process.env.NODE_ENV === "development") middlewares.push(logger);
 const store = configureStore({
   reducer: {
     todoList: todoListSlice,
+    newTodoList: newTodoListSlice,
   },
   middleware: middlewares,
 });

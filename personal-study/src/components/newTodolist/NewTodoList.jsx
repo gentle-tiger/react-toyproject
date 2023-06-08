@@ -1,23 +1,34 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-import styled from "styled-components";
+
+// import React from 'react'
+
+import NewItemAdder from "./NewItemAdder";
+import NewButton from "./NewButton";
+import NewTodoItem from "./NewTodoItem";
 import React, { useEffect, useState } from "react";
-import Button from "./Button";
-import ItemAdder from "./ItemAdder";
-import TodoItem from "./TodoItem";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setList,
+  resetList,
+  clearList,
+  deleteList,
+} from "../../redux/slice/newTodoListSlice.js";
 
 function NewTodoList() {
-  const [list, setList] = useState([]);
+  const dispatch = useDispatch();
+  const { list } = useSelector((store) => store.newTodoList);
+  // const [list, setList] = useState([]);
   useEffect(() => {
     fetch("/data/newTodoList.json").then((res) =>
-      res.json().then((data) => setList(data))
+      res.json().then((data) => dispatch(setList(data)))
     );
   }, []);
-  // console.log(res.json())
 
   const handleClickReset = () => {
-    setList([]);
+    dispatch(resetList());
+    // setList([]);
   };
 
   /* handleClickDelete 함수의 인자로 item.id 의 값을 직접 주어, 이벤트 객체가 통과하도록 하였다. 
@@ -25,29 +36,25 @@ function NewTodoList() {
    그래서 함수를 props 로 전달할 때 그냥 주는 것이 아니라 item.id를 넣어서 보내주어야 한다. 
    바로 실행되지 않게 하기 위해서  콜백함수로 전달해준다. */
   const handleClickDelete = (id) => {
-    const newList = list.filter((item) => item.id !== id);
-    setList(newList);
-    // console.log(newList);
+    dispatch(deleteList(id));
+    // const newList = list.filter((item) => item.id !== id);
+    // setList(newList);
   };
 
   /* 배열 안의 객체의 속성값에 접근하는 방법 ( 벨로퍼트 참고 ) */
   const handleClickClear = (id) => {
-    const newList = list.map((item) =>
-      item.id === id ? { ...item, done: !item.done } : item
-    );
-
-    setList(newList);
+    dispatch(clearList(id));
   };
   // console.log(list.length);
   return (
     <div css={todoList}>
       <div css={content}>
         <h1 css={title}> 여행 계획 : 음식편</h1>
-        <ItemAdder setList={setList} list={list} />
+        <NewItemAdder setList={setList} list={list} />
 
         <div>
           {list.map((item) => (
-            <TodoItem
+            <NewTodoItem
               key={item.id}
               id={item.id}
               text={item.text}
@@ -61,9 +68,9 @@ function NewTodoList() {
           <span css={listLimited(list)}>
             해야할 일이 {list.length}개 남았습니다.
           </span>
-          <Button reset onClick={handleClickReset}>
+          <NewButton reset onClick={handleClickReset}>
             초기화
-          </Button>
+          </NewButton>
         </div>
       </div>
     </div>

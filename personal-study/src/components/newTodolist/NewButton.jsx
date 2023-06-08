@@ -5,12 +5,12 @@ import { jsx, css } from "@emotion/react";
 // import styled from "@emotion/styled";
 import styled from "styled-components";
 
-function Button({ children, ...props }) {
+function NewButton({ children, ...props }) {
   /// props 를 한 번에 모아서 가져오고 넣어준다.
   return <StyledButton {...props}>{children}</StyledButton>;
 }
 
-export default Button;
+export default NewButton;
 
 const StyledButton = styled.button`
   background-color: #ffffff;

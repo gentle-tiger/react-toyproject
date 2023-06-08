@@ -1,6 +1,6 @@
 import React from "react";
-import NewTodoList from "../components/newTodolist/NewTodoList";
 import PageBtn from "../components/PageBtn";
+import NewTodoList from "../components/NewTodoList/NewTodoList";
 
 function NewTodoListPage() {
   return (

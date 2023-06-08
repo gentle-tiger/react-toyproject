@@ -4,9 +4,8 @@ import { jsx, css } from "@emotion/react";
 import styled from "styled-components";
 
 import React, { useState } from "react";
-import Button from "./Button";
-
-function TodoItem({ done, text, handleClickDelete, handleClickClear }) {
+import NewButton from "./NewButton";
+function NewTodoItem({ done, text, handleClickDelete, handleClickClear }) {
   const [isClicked, setIsClicked] = useState(false);
 
   /* isClicked의 상태값을 바꾸고, 버튼을 활성화 시킨다. */
@@ -21,19 +20,19 @@ function TodoItem({ done, text, handleClickDelete, handleClickClear }) {
 
       {isClicked ? (
         <div>
-          <Button delete onClick={handleClickDelete}>
+          <NewButton delete onClick={handleClickDelete}>
             삭제
-          </Button>
-          <Button clear onClick={handleClickClear}>
+          </NewButton>
+          <NewButton clear onClick={handleClickClear}>
             완료
-          </Button>
+          </NewButton>
         </div>
       ) : null}
     </div>
   );
 }
 
-export default TodoItem;
+export default NewTodoItem;
 const todoItem = css`
   display: flex;
   justify-content: space-between;
