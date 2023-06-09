@@ -8,6 +8,7 @@ import Counter from "./components/Counter";
 import Router from "./Router";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import Modal from "./components/Modal";
 
 function App() {
   console.log("App Reder되었당!!!");
@@ -15,6 +16,7 @@ function App() {
     <div>
       <Provider store={store}>
         <Router />
+        <Modal />
       </Provider>
     </div>
   );

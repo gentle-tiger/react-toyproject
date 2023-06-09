@@ -5,9 +5,16 @@ import { jsx, css } from "@emotion/react";
 import Modal from "../components/Modal";
 
 function ModalPage() {
+  const handleClickClose = () => {
+    console.log("close");
+  };
   return (
     <div css={modalPageCss}>
-      <Modal />
+      <Modal
+        title="redux 복습"
+        content="redux 꼭 복습하자!!"
+        onClickClose={handleClickClose}
+      />
     </div>
   );
 }
