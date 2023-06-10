@@ -2,22 +2,28 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
 
+import styled from "@emotion/styled";
 import "./styles/reset.css";
 import TodoList from "./components/TodoList";
 import Counter from "./components/Counter";
 import Router from "./Router";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import store from "./redux/store";
 import Modal from "./components/Modal";
+import NewButton from "./components/NewTodoList/NewButton";
+// import NewButton from "./components/NewTodoList/NewButton";
+// import Button from "./components/Button";
 
 function App() {
   console.log("App Reder되었당!!!");
+  const { showModal } = useSelector((store) => store.modal);
+
   return (
     <div>
-      <Provider store={store}>
-        <Router />
-        <Modal />
-      </Provider>
+      {/* <Provider store={store}> */}
+      <Router />
+      {showModal && <Modal title="app component" content="app test" />}
+      {/* </Provider> */}
     </div>
   );
 }
@@ -37,3 +43,5 @@ export default App;
 
 // store: 앞서 설명한 Redux store 객체를 가져옵니다. 이 store 객체는 Redux에서 상태 관리를 수행하고,
 // 컴포넌트에서 Redux 상태를 사용하거나 업데이트할 수 있게 해줍니다.
+
+//

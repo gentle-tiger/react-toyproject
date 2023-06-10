@@ -1,56 +1,33 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
+import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { close } from "../redux/slice/modalSlice";
+import ModalBtn from "../components/ModalBtn";
 
 function MainPage() {
   return (
     <div css={[mainPage]}>
       <h1>여기는 메인 페이지 입니다.</h1>
-      <Link to="/test">Test</Link>
-      <NavLink
-        css={link}
-        to="/counter"
-        style={({ isActive }) => ({
-          backgroundColor: isActive ? "black" : "#76FF03",
-        })}
-      >
-        Counter
-      </NavLink>
-      <NavLink
-        css={link} // css 도 먹으면서 style 도 같이 먹는다.  단. 우선순위는 css in js < style
-        to="/todoList"
-        style={({ isActive }) => {
-          return isActive ? activeStyle : deactiveStyle;
-        }}
-      >
-        TodoList
-      </NavLink>
-      <StyledLink to="/expanding">ExpandCard</StyledLink>
-      <StyledLink css={link} to="/newExpanding">
-        NewExpandCard
-      </StyledLink>
-      <Link css={link} to="/newTodoList">
-        NewTodoList
-      </Link>
-      <Link css={link} to="/colors">
-        Colors
-      </Link>
-      <Link to="/modal">Modal</Link>
+      <div css={link}>
+        <StyledLink to="/test">Test</StyledLink>
+        <StyledLink to="/counter">Counter</StyledLink>
+        <StyledLink to="/todoList">TodoList</StyledLink>
+        <StyledLink to="/expanding">ExpandCard</StyledLink>
+        <StyledLink to="/newExpanding">NewExpandCard</StyledLink>
+        <StyledLink to="/newTodoList">NewTodoList</StyledLink>
+        <StyledLink to="/colors">Colors</StyledLink>
+        <Link to="/modal">Modal</Link>
+      </div>
+      <ModalBtn />
     </div>
   );
 }
 
 export default MainPage;
 
-const StyledLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  padding: 4px;
-  border-radius: 10px;
-  background-color: #e609e6;
-`;
 const mainPage = css`
   display: flex;
   flex-direction: column;
@@ -62,23 +39,25 @@ const mainPage = css`
     font-size: 50px;
   }
 `;
-
 const link = css`
-  background-color: #1de9b6;
-  color: black;
+  display: flex;
+  gap: 10px;
+`;
+const StyledLink = styled(Link)`
+  background-color: #e77f35;
+  color: #ffffff;
   text-decoration: none;
-  padding: 4px;
+  padding: 8px;
   border-radius: 10px;
 `;
+// const activeStyle = {
+//   backgroundColor: "blue",
+//   padding: "5px",
+//   color: "white",
+// };
 
-const activeStyle = {
-  backgroundColor: "blue",
-  padding: "5px",
-  color: "white",
-};
-
-const deactiveStyle = {
-  backgroundColor: "#ff0059",
-  padding: "5px",
-  color: "white",
-};
+// const deactiveStyle = {
+//   backgroundColor: "#ff0059",
+//   padding: "5px",
+//   color: "white",
+// };

@@ -1,19 +1,26 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-import { AiOutlineRollback } from "react-icons/ai";
+import { HiInformationCircle } from "react-icons/hi";
+import { useDispatch } from "react-redux";
+import { close } from "../redux/slice/modalSlice";
 
-function PageBtn() {
+function ModalBtn({ onClick }) {
+  const dispatch = useDispatch();
+
+  const onClickClose = () => {
+    dispatch(close());
+  };
   return (
-    <a css={link} href="/">
-      <AiOutlineRollback />
-    </a>
+    <button css={Modal} onClick={onClickClose}>
+      <HiInformationCircle />
+    </button>
   );
 }
 
-export default PageBtn;
+export default ModalBtn;
 
-const link = css`
+const Modal = css`
   position: fixed;
   display: flex;
   text-decoration: none;
@@ -21,12 +28,13 @@ const link = css`
   align-items: center;
   width: 5%;
   height: 24px;
+
   border: 0;
   border-radius: 5px;
   background-color: #c8e0c8;
   padding: 4px;
   color: #ffff;
   bottom: 2%;
-  right: 2%;
+  right: 8%;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 `;

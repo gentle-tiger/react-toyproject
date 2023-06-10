@@ -5,12 +5,19 @@ import { jsx, css } from "@emotion/react";
 import React from "react";
 import ExpandingCard from "../components/ExpandingCard";
 import PageBtn from "../components/PageBtn";
+import NewButton from "../components/NewTodoList/NewButton";
+import ModalBtn from "../components/ModalBtn";
+import { useDispatch, useSelector } from "react-redux";
+import { close, test } from "../redux/slice/modalSlice";
+import ModalPage from "./ModalPage";
+import Modal from "../components/Modal";
 
 function ExpandingCardPage() {
   return (
     <div css={expandingPageCss}>
       <ExpandingCard />
       <PageBtn />
+      <ModalBtn />
     </div>
   );
 }

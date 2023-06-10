@@ -7,12 +7,14 @@ import TodoList from "../components/TodoList";
 import MainPage from "./MainPage";
 import { Link } from "react-router-dom";
 import PageBtn from "../components/PageBtn";
+import ModalBtn from "../components/ModalBtn";
 
 function TodoListPage() {
   return (
     <div css={todoListPageCss}>
       <TodoList />
       <PageBtn />
+      <ModalBtn />
     </div>
   );
 }

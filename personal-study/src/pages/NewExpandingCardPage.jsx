@@ -5,12 +5,14 @@ import { jsx, css } from "@emotion/react";
 import React from "react";
 import NewExpandingCard from "../components/NewExpandingCard/NewExpandingCard";
 import PageBtn from "../components/PageBtn";
+import ModalBtn from "../components/ModalBtn";
 
 function NewExpandingCardPage() {
   return (
     <div css={expandingCardCss}>
       <NewExpandingCard />
       <PageBtn />
+      <ModalBtn />
     </div>
   );
 }

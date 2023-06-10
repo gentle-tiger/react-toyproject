@@ -8,12 +8,14 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import Test from "../components/Test";
 import PageBtn from "../components/PageBtn";
+import ModalBtn from "../components/ModalBtn";
 
 function TestPage() {
   return (
     <div>
       <Test />
       <PageBtn />
+      <ModalBtn />
     </div>
   );
 }

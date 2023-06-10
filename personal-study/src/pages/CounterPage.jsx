@@ -6,12 +6,14 @@ import React from "react";
 import Counter from "../components/Counter";
 import { Link } from "react-router-dom";
 import PageBtn from "../components/PageBtn";
+import ModalBtn from "../components/ModalBtn";
 
 function CounterPage() {
   return (
     <div css={counterPageCss}>
       <Counter />
       <PageBtn />
+      <ModalBtn />
     </div>
   );
 }

@@ -1,0 +1,4 @@
+const dispatch = useDispatch(); const handleModalScreen = () => {
+dispatch(close()); };
+
+<ModalBtn onClick="{handleModalScreen}" />

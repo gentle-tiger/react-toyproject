@@ -3,18 +3,13 @@
 import { jsx, css } from "@emotion/react";
 
 import Modal from "../components/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import ModalBtn from "../components/ModalBtn";
 
-function ModalPage() {
-  const handleClickClose = () => {
-    console.log("close");
-  };
+function ModalPage({ close }) {
   return (
     <div css={modalPageCss}>
-      <Modal
-        title="redux 복습"
-        content="redux 꼭 복습하자!!"
-        onClickClose={handleClickClose}
-      />
+      <ModalBtn />
     </div>
   );
 }
@@ -26,4 +21,5 @@ const modalPageCss = css`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: grey;
 `;
