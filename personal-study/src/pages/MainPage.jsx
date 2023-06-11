@@ -18,6 +18,7 @@ function MainPage() {
         <StyledLink to="/expanding">ExpandCard</StyledLink>
         <StyledLink to="/newExpanding">NewExpandCard</StyledLink>
         <StyledLink to="/newTodoList">NewTodoList</StyledLink>
+        <StyledLink to="/expandingSearchInput">ExpandingSearchInput</StyledLink>
         <StyledLink to="/colors">Colors</StyledLink>
         <Link to="/modal">Modal</Link>
       </div>

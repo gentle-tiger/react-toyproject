@@ -13,11 +13,19 @@ import ModalPage from "./ModalPage";
 import Modal from "../components/Modal";
 
 function ExpandingCardPage() {
+  const { ShowModal } = useSelector((store) => store.modal);
   return (
     <div css={expandingPageCss}>
       <ExpandingCard />
       <PageBtn />
-      <ModalBtn />
+      {ShowModal ? (
+        <Modal
+          title="ExpandingCardPage"
+          content="ExpandingCardPage에 대한 내용입니다ㅏㅏㅏ"
+        />
+      ) : (
+        <ModalBtn />
+      )}
     </div>
   );
 }

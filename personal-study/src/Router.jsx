@@ -9,6 +9,7 @@ import TestPage from "./pages/TestPage";
 import ColorsPage from "./pages/ColorsPage";
 import NewExpandingCardPage from "./pages/NewExpandingCardPage";
 import ModalPage from "./pages/ModalPage";
+import ExpandingSearchInputPage from "./pages/ExpandingSearchInputPage";
 
 function Router() {
   return (
@@ -21,6 +22,10 @@ function Router() {
         <Route path="/expanding" element={<ExpandingCardPage />} />
         <Route path="/newExpanding" element={<NewExpandingCardPage />} />
         <Route path="/newTodoList" element={<NewTodoListPage />} />
+        <Route
+          path="/expandingSearchInput"
+          element={<ExpandingSearchInputPage />}
+        />
         <Route path="/colors" element={<ColorsPage />} />
         <Route path="/modal" element={<ModalPage />} />
       </Routes>

@@ -5,10 +5,12 @@ import { jsx, css } from "@emotion/react";
 import Modal from "../components/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import ModalBtn from "../components/ModalBtn";
+import PageBtn from "../components/PageBtn";
 
-function ModalPage({ close }) {
+function ModalPage() {
   return (
     <div css={modalPageCss}>
+      <PageBtn />
       <ModalBtn />
     </div>
   );

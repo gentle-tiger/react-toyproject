@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   showModal: false,
 };
+
 const modalSlice = createSlice({
   name: "modal",
   initialState,
@@ -13,12 +14,9 @@ const modalSlice = createSlice({
     close(state) {
       state.showModal = !state.showModal;
     },
-    // test(state) {
-    //   console.log(state.showModal + "연결");
-    // },
   },
 });
 
-export const { setShowModal, close /* test */ } = modalSlice.actions;
+export const { setShowModal, close } = modalSlice.actions;
 
 export default modalSlice.reducer;

@@ -6,13 +6,14 @@ import React from "react";
 import PageBtn from "../components/PageBtn";
 import Colors from "../components/Colors/Colors";
 import ModalBtn from "../components/ModalBtn";
+import Modal from "../components/Modal";
 
 function ColorsPage() {
   return (
     <div css={colorPageCss}>
       <Colors />
       <PageBtn />
-      <ModalBtn />
+      {/* <ModalBtn /> */}
     </div>
   );
 }

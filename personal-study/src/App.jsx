@@ -11,18 +11,20 @@ import { Provider, useSelector } from "react-redux";
 import store from "./redux/store";
 import Modal from "./components/Modal";
 import NewButton from "./components/NewTodoList/NewButton";
+import ModalBtn from "./components/ModalBtn";
 // import NewButton from "./components/NewTodoList/NewButton";
 // import Button from "./components/Button";
 
 function App() {
   console.log("App Reder되었당!!!");
   const { showModal } = useSelector((store) => store.modal);
-
+  // const { text } = useSelector((store) => store.modal);
   return (
     <div>
       {/* <Provider store={store}> */}
       <Router />
-      {showModal && <Modal title="app component" content="app test" />}
+      {showModal && <Modal title="title" content="content" />}
+      {/* <ModalBtn /> */}
       {/* </Provider> */}
     </div>
   );

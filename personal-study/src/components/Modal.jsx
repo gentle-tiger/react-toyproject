@@ -55,9 +55,8 @@ const modalBox = css`
   /* min-height: 10rem; */
   border-radius: 10px;
   padding: 8px;
-  border: 1px solid red;
+  border: 1px solid blue;
   z-index: 9002;
-
   .header {
     display: flex;
     align-items: center;

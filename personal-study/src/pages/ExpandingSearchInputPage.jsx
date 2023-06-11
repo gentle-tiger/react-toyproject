@@ -3,23 +3,23 @@
 import { jsx, css } from "@emotion/react";
 
 import React from "react";
-import Counter from "../components/Counter";
-import { Link } from "react-router-dom";
 import PageBtn from "../components/PageBtn";
 import ModalBtn from "../components/ModalBtn";
+import ExpandingSearchInput from "../components/ExpandingSearchInput";
 
-function CounterPage() {
+function ExpandingSearchInputPage(props) {
   return (
-    <div css={counterPageCss}>
-      <Counter />
+    <div css={expandingSearchInputcss}>
+      <ExpandingSearchInput />
       <PageBtn />
-      {/* <ModalBtn /> */}
+      <ModalBtn />
     </div>
   );
 }
 
-export default CounterPage;
-const counterPageCss = css`
+export default ExpandingSearchInputPage;
+
+const expandingSearchInputcss = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
