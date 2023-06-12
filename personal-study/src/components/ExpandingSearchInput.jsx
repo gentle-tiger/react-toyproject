@@ -55,8 +55,8 @@ const containerCss = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 `;
+/* box-shadow: ${state ? "rgb(38, 57, 77) 0px 20px 30px -10px " : "null"}; */
 
 //  input 박스를 안 보이도로 하려면 이 css의 width 를 바꿔야함.
 const expandingSearch = (state) => {
@@ -65,15 +65,10 @@ const expandingSearch = (state) => {
     justify-content: center;
     align-items: center;
     height: 45px; // btn이랑 맞춤.
-    background-color: white;
     border-radius: 2px;
     width: 100%;
-    visibility: ${state ? "visible" : "none"};
-    /* display: ${state ? "flex" : "hidden"}; */
     flex: ${state ? "1" : "0"};
-    /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
     transition: all ease 0.5s 0s;
-    /* transition: box-shadow ease 1s 0s; */
   `;
 };
 
@@ -84,6 +79,14 @@ const expandingSearchInput = (state) => css`
   padding: 0 12px;
   font-weight: bold;
   width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  visibility: ${state ? "visible" : "hidden"};
+  display: ${state ? "inline" : "none"};
+
+  transition: all ease 0.5s 0s;
+  /* transition: display ease 0.5s 0s; */
 `;
 
 const expandingSearchBtn = (state) => css`
@@ -93,5 +96,5 @@ const expandingSearchBtn = (state) => css`
   min-width: 45px; // btn은 정 사각형을 휴지하도록 함.
   min-height: 45px; // input이랑 맞춤
   border: 0;
-  background-color: white;
+  background-color: #ffffff;
 `;
