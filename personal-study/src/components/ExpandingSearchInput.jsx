@@ -1,22 +1,23 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, css } from "@emotion/react";
+import { jsx, css, ClassNames } from "@emotion/react";
 
 import React, { useState } from "react";
 function ExpandingSearchInput() {
   const [state, setState] = useState(false);
 
   const handleClick = (e) => {
-    setState((prev) => !prev);
-  };
-  const handleChange = (e) => {
-    const { code } = e;
-    console.log(code);
+    const { className } = e.target;
+    if (
+      className === "css-bxvpqy-ExpandingSearchInput"
+        ? setState((prev) => !prev)
+        : null
+    );
   };
 
   console.log(state);
   return (
-    <div css={wrapperCss} onClick={handleClick} onKeyDown={handleChange}>
+    <div css={wrapperCss} onClick={handleClick}>
       <div css={containerCss}>
         <div css={expandingSearch(state)}>
           <input
