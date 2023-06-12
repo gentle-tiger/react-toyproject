@@ -56,7 +56,6 @@ const containerCss = css`
   justify-content: center;
   align-items: center;
 `;
-/* box-shadow: ${state ? "rgb(38, 57, 77) 0px 20px 30px -10px " : "null"}; */
 
 //  input 박스를 안 보이도로 하려면 이 css의 width 를 바꿔야함.
 const expandingSearch = (state) => {
@@ -84,9 +83,6 @@ const expandingSearchInput = (state) => css`
   appearance: none;
   visibility: ${state ? "visible" : "hidden"};
   display: ${state ? "inline" : "none"};
-
-  transition: all ease 0.5s 0s;
-  /* transition: display ease 0.5s 0s; */
 `;
 
 const expandingSearchBtn = (state) => css`
