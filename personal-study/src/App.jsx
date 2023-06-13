@@ -21,11 +21,8 @@ function App() {
   // const { text } = useSelector((store) => store.modal);
   return (
     <div>
-      {/* <Provider store={store}> */}
       <Router />
       {showModal && <Modal title="title" content="content" />}
-      {/* <ModalBtn /> */}
-      {/* </Provider> */}
     </div>
   );
 }

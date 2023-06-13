@@ -13,7 +13,7 @@ function CounterPage() {
     <div css={counterPageCss}>
       <Counter />
       <PageBtn />
-      {/* <ModalBtn /> */}
+      <ModalBtn title="counter" content="counter페이지입니다." />
     </div>
   );
 }

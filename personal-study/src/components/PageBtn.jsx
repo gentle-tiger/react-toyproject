@@ -19,8 +19,8 @@ const link = css`
   text-decoration: none;
   justify-content: center;
   align-items: center;
-  width: 5%;
-  height: 24px;
+  min-width: 5%;
+  min-height: 24px;
   border: 0;
   border-radius: 5px;
   background-color: #c8e0c8;

@@ -3,10 +3,17 @@
 import { jsx, css, ClassNames } from "@emotion/react";
 
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 function ExpandingSearchInput() {
+  const { pageContents } = useSelector((store) => store.modal);
   const [state, setState] = useState(false);
+  const dispatch = useDispatch();
 
   const handleClick = (e) => {
+    dispatch(
+      pageContents({ title: "새로운 타이틀", content: "새로운 컨텐츠" })
+    );
+
     const { className } = e.target;
     if (
       className === "css-bxvpqy-ExpandingSearchInput"
@@ -15,7 +22,7 @@ function ExpandingSearchInput() {
     );
   };
 
-  console.log(state);
+  // console.log(state);
   return (
     <div css={wrapperCss} onClick={handleClick}>
       <div css={containerCss}>

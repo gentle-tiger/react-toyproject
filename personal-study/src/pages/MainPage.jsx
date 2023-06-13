@@ -22,7 +22,7 @@ function MainPage() {
         <StyledLink to="/colors">Colors</StyledLink>
         <Link to="/modal">Modal</Link>
       </div>
-      <ModalBtn />
+      <ModalBtn title="main" content="반갑습니다. main페이지입니다." />{" "}
     </div>
   );
 }

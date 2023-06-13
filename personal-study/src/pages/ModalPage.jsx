@@ -11,7 +11,7 @@ function ModalPage() {
   return (
     <div css={modalPageCss}>
       <PageBtn />
-      <ModalBtn />
+      <ModalBtn title="modal" content="반갑습니다. modal 페이지입니다." />
     </div>
   );
 }

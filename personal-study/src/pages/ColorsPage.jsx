@@ -13,7 +13,7 @@ function ColorsPage() {
     <div css={colorPageCss}>
       <Colors />
       <PageBtn />
-      {/* <ModalBtn /> */}
+      <ModalBtn title="color" content="color페이지입니다." />
     </div>
   );
 }

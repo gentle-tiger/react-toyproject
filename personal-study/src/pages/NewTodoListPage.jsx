@@ -8,7 +8,10 @@ function NewTodoListPage() {
     <div>
       <NewTodoList />
       <PageBtn />
-      <ModalBtn />
+      <ModalBtn
+        title="NewTodoList"
+        content="반갑습니다. NewTodoList 페이지입니다."
+      />
     </div>
   );
 }

@@ -5,22 +5,24 @@ import { jsx, css } from "@emotion/react";
 import { VscClose } from "react-icons/vsc";
 // import { Button } from "./Button";
 import NewButton from "../components/NewTodoList/NewButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { close } from "../redux/slice/modalSlice";
+import { HiInformationCircle } from "react-icons/hi";
 
 function Modal({ title, content }) {
+  const { pageContents } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
-
   const onClickClose = () => {
     dispatch(close());
   };
+
   return (
     <div css={modal}>
       <div css={modalBox}>
         <div className="header">
-          {title} <VscClose size={24} onClick={onClickClose} />
+          {pageContents.title} <VscClose size={24} onClick={onClickClose} />
         </div>
-        <div className="body">{content}</div>
+        <div className="body">{pageContents.content}</div>
         <div className="footer">
           <NewButton modal onClick={onClickClose}>
             Close

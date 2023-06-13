@@ -12,7 +12,10 @@ function ExpandingSearchInputPage(props) {
     <div css={expandingSearchInputcss}>
       <ExpandingSearchInput />
       <PageBtn />
-      <ModalBtn />
+      <ModalBtn
+        title="ExpandingSearchInput"
+        content="반갑습니다. ExpandingSearchInput페이지입니다."
+      />
     </div>
   );
 }

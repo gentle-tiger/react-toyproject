@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   showModal: false,
+  pageContents: { title: "타이틀", content: "컨텐츠" },
 };
 
 const modalSlice = createSlice({
@@ -14,9 +15,19 @@ const modalSlice = createSlice({
     close(state) {
       state.showModal = !state.showModal;
     },
+    setPageContents(state, action) {
+      state.pageContents = action.payload;
+    },
+    changeTitle(state, action) {
+      state.pageContents.title = action.payload;
+    },
+    changeContent(state, action) {
+      state.pageContents.content = action.payload;
+    },
   },
 });
 
-export const { setShowModal, close } = modalSlice.actions;
+export const { setShowModal, close, pageContents, changeTitle, changeContent } =
+  modalSlice.actions;
 
 export default modalSlice.reducer;
