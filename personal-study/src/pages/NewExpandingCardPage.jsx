@@ -14,7 +14,7 @@ function NewExpandingCardPage() {
       <PageBtn />
       <ModalBtn
         title="NewExpandingCard"
-        content="반갑습니다. NewExpandingCard 페이지입니다."
+        content="반갑습니다. newExpandingCard 페이지입니다."
       />
     </div>
   );
