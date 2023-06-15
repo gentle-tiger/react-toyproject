@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css, ClassNames } from "@emotion/react";
+
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,14 +18,13 @@ function ExpandingSearchInput() {
     setUserInput(() => value);
     console.log(value); // console.log
   };
+
   const handleClick = (e) => {
     const { className } = e.target;
-    if (
-      className === "css-bxvpqy-ExpandingSearchInput"
-        ? setState((prev) => !prev)
-        : null
-    );
+    console.log(className);
+    if (className.includes("wrapper") ? setState((prev) => !prev) : null);
   };
+  console.log(state);
 
   const navigateToPurchase = () => {
     if (userInput === "") return;
@@ -36,11 +36,9 @@ function ExpandingSearchInput() {
     if (code === "Enter") return navigate("/"); // "/purchase"
     // console.log
   };
-  // console.log(state);
   return (
-    <div css={wrapperCss} onClick={handleClick}>
+    <div css={wrapperCss(state)} className="wrapper" onClick={handleClick}>
       <div css={containerCss}>
-        {/* <div css={expandingSearch(state)}> */}
         <input
           type="text"
           value={userInput}
@@ -49,10 +47,13 @@ function ExpandingSearchInput() {
           onChange={handleChangeInput}
           placeholder="Search..."
         />
-        {/* </div> */}
 
         <button css={expandingSearchBtn} onClick={navigateToPurchase}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} fontSize={24} />
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            fontSize={24}
+            color="#8344da"
+          />
         </button>
       </div>
     </div>
@@ -61,60 +62,34 @@ function ExpandingSearchInput() {
 
 export default ExpandingSearchInput;
 
-const wrapperCss = css`
+const wrapperCss = (state) => css`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #1d87e9;
+  background-color: ${state ? "#8344da" : "#e64f4f"};
 `;
 const containerCss = css`
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
-//  input 박스를 안 보이도로 하려면 이 css의 width 를 바꿔야함.
-// const expandingSearch = (state) => {
-//   return css`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 45px; // btn이랑 맞춤.
-//     border-radius: 2px;
-//     width: 100%;
-//     flex: ${state ? "1" : "0"};
-//     transition: all ease 0.5s 0s;
-//   `;
-// };
-
 const expandingSearchInput = (state) => css`
+  width: ${state ? "100%" : "0%"};
   border: 0;
-  height: 45px; // btn이랑 맞춤
-  outline: none; // 클릭시 보이는 테두리 안 보이도록 하기.
-  padding: 0 12px;
-  font-weight: bold;
-  width: 100%;
-  background-color: white;
-  flex: ${state ? "1" : "0"};
-  transition: all ease 0.5s 0s;
-
-  // 대안
-  background-color: ${state ? "#ffff" : "#1d87e9"};
-
-  /* border: 1px solid red; */
-  /* visibility: hidden; */
-  /* visibility: ${state ? "visible" : "hidden"}; */
-  /* display: ${state ? "inline" : "none"}; */
+  padding: ${state ? "8px" : "0px"};
+  outline: none;
+  transition-property: width padding;
+  transition-duration: 0.5s;
 `;
 
 const expandingSearchBtn = css`
-  display: flex;
-  justify-content: center;
-  align-items: center; // search icon 정가운데로 위치.
-  min-width: 45px; // btn은 정 사각형을 휴지하도록 함.
-  min-height: 45px; // input이랑 맞춤
+  min-height: 2.5rem;
+  min-width: 2.5rem;
   border: 0;
-  background-color: #ffffff;
+  background-color: #31e670;
+  &:hover {
+    background-color: #ffff00;
+  }
 `;
