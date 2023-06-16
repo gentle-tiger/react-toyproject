@@ -7,7 +7,6 @@ import { changeTitle, close, changeContent } from "../redux/slice/modalSlice";
 
 function ModalBtn({ title, content }) {
   const { showModal } = useSelector((store) => store.modal);
-  const { pageContent } = useSelector((store) => store.modal);
 
   const dispatch = useDispatch();
 
@@ -19,22 +18,15 @@ function ModalBtn({ title, content }) {
     console.log(content);
   };
 
-  // const onChangeContents = () => {
-  // };
   return (
-    <button
-      css={showModal ? deAction : isAction}
-      onClick={onClickClose}
-      // onChange={onChangeContents}
-    >
+    <button css={showModal ? deAction : isAction} onClick={onClickClose}>
       <HiInformationCircle />
     </button>
   );
 }
 
 export default ModalBtn;
-
-const isAction = css`
+const actionStyles = css`
   position: fixed;
   display: flex;
   text-decoration: none;
@@ -44,30 +36,19 @@ const isAction = css`
   min-height: 24px;
   border: 0;
   border-radius: 5px;
-  background-color: #c8e0c8;
   padding: 4px;
   color: #ffff;
   bottom: 2%;
   right: 8%;
   cursor: pointer;
-
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 `;
+const isAction = css`
+  ${actionStyles}
+  background-color: #c8e0c8;
+`;
+
 const deAction = css`
-  position: fixed;
-  display: flex;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  min-width: 5%;
-  min-height: 24px;
-  border: 0;
-  border-radius: 5px;
+  ${actionStyles}
   background-color: #cf5c82;
-  padding: 4px;
-  color: #ffff;
-  bottom: 2%;
-  right: 8%;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 `;

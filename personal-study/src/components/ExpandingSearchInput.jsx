@@ -12,30 +12,31 @@ function ExpandingSearchInput() {
   const [userInput, setUserInput] = useState("");
 
   const navigate = useNavigate();
-
+  const handleClick = (e) => {
+    const { className } = e.target;
+    // console.log(className.includes("wrapper"));
+    if (className.includes("wrapper") ? setState((prev) => !prev) : null);
+  };
   const handleChangeInput = (e) => {
     const { value } = e.target;
     setUserInput(() => value);
     console.log(value); // console.log
   };
 
-  const handleClick = (e) => {
-    const { className } = e.target;
-    console.log(className);
-    if (className.includes("wrapper") ? setState((prev) => !prev) : null);
-  };
   console.log(state);
 
   const navigateToPurchase = () => {
     if (userInput === "") return;
     navigate("/");
   };
+
   const handleKeyDownEnter = (e) => {
     const { code } = e;
     if (userInput === "") return;
     if (code === "Enter") return navigate("/"); // "/purchase"
     // console.log
   };
+
   return (
     <div css={wrapperCss(state)} className="wrapper" onClick={handleClick}>
       <div css={containerCss}>
@@ -69,6 +70,7 @@ const wrapperCss = (state) => css`
   width: 100vw;
   height: 100vh;
   background-color: ${state ? "#8344da" : "#e64f4f"};
+  transition: background-color ease 0.5s 0.5s;
 `;
 const containerCss = css`
   display: flex;
@@ -81,7 +83,7 @@ const expandingSearchInput = (state) => css`
   padding: ${state ? "8px" : "0px"};
   outline: none;
   transition-property: width padding;
-  transition-duration: 0.5s;
+  transition-duration: 0.7s;
 `;
 
 const expandingSearchBtn = css`
@@ -89,6 +91,7 @@ const expandingSearchBtn = css`
   min-width: 2.5rem;
   border: 0;
   background-color: #31e670;
+  transition: background-color 0.5s;
   &:hover {
     background-color: #ffff00;
   }
