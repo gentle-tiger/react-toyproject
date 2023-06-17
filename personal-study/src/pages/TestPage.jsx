@@ -15,7 +15,7 @@ function TestPage() {
     <div>
       <Test />
       <PageBtn />
-      <ModalBtn />
+      <ModalBtn title="test" text="test입니다.!" />
     </div>
   );
 }

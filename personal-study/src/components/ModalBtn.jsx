@@ -3,23 +3,25 @@
 import { jsx, css } from "@emotion/react";
 import { HiInformationCircle } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTitle, close, changeContent } from "../redux/slice/modalSlice";
+import { changeTitle, close, changeText } from "../redux/slice/layoutSlice";
 
-function ModalBtn({ title, content }) {
-  const { showModal } = useSelector((store) => store.modal);
+function ModalBtn({ title, text }) {
+  const { modal } = useSelector((store) => store.layout);
 
   const dispatch = useDispatch();
 
   const onClickClose = () => {
     dispatch(close());
+    // title , content 바꾸기
     dispatch(changeTitle(title));
-    dispatch(changeContent(content));
-    console.log(title);
-    console.log(content);
+    dispatch(changeText(text));
   };
 
   return (
-    <button css={showModal ? deAction : isAction} onClick={onClickClose}>
+    <button
+      css={modal.content.show ? deAction : isAction}
+      onClick={onClickClose}
+    >
       <HiInformationCircle />
     </button>
   );

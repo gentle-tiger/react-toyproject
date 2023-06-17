@@ -6,12 +6,12 @@ import { VscClose } from "react-icons/vsc";
 // import { Button } from "./Button";
 import NewButton from "../components/NewTodoList/NewButton";
 import { useDispatch, useSelector } from "react-redux";
-import { close } from "../redux/slice/modalSlice";
-import { HiInformationCircle } from "react-icons/hi";
+import { close, content } from "../redux/slice/layoutSlice";
 
-function Modal({ title, content }) {
-  const { pageContents } = useSelector((store) => store.modal);
+function Modal() {
+  const { content } = useSelector((store) => store.layout.modal);
   const dispatch = useDispatch();
+
   const onClickClose = () => {
     dispatch(close());
   };
@@ -19,11 +19,11 @@ function Modal({ title, content }) {
   return (
     <div css={modal}>
       <div css={modalBox}>
-        <div className="header">
-          {pageContents.title} <VscClose size={24} onClick={onClickClose} />
+        <div css={header}>
+          {content.title} <VscClose size={24} onClick={onClickClose} />
         </div>
-        <div className="body">{pageContents.content}</div>
-        <div className="footer">
+        <div css={body}>{content.text}</div>
+        <div css={footer}>
           <NewButton modal onClick={onClickClose}>
             Close
           </NewButton>
@@ -36,9 +36,6 @@ function Modal({ title, content }) {
 export default Modal;
 const modal = css`
   position: relative;
-  /* width: 100%; */
-  /* height: 100%; */
-  /* z-index: 9001; */
 `;
 const modalBox = css`
   position: fixed;
@@ -50,43 +47,32 @@ const modalBox = css`
   align-items: center;
   flex-direction: column;
   background-color: white;
-  /* width: 100%; */
-  /* height: 100%; */
   width: 20rem;
-  /* max-height: 10rem; */
-  /* min-height: 10rem; */
   border-radius: 10px;
   padding: 8px;
   border: 1px solid blue;
   z-index: 9002;
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 3rem;
-    /* z-index: 9002; */
+`;
+const header = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 3rem;
+`;
 
-    /* border: 1px solid red; */
-  }
-  .body {
-    width: 100%;
-    height: 100%;
-    min-height: 3rem;
-    /* border: 1px solid black; */
-    border-top: 1px solid lightgrey;
-    border-bottom: 1px solid lightgrey;
-    padding: 8px 0;
-    /* z-index: 9002; */
-  }
-  .footer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 3rem;
-    width: 100%;
-    /* z-index: 9002; */
-
-    /* border: 1px solid blue; */
-  }
+const body = css`
+  width: 100%;
+  height: 100%;
+  min-height: 3rem;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding: 8px 0;
+`;
+const footer = css`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 3rem;
+  width: 100%;
 `;

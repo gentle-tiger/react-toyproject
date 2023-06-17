@@ -14,7 +14,7 @@ function TodoListPage() {
     <div css={todoListPageCss}>
       <TodoList />
       <PageBtn />
-      <ModalBtn />
+      <ModalBtn title="todoList" text="todoList입니다.!" />
     </div>
   );
 }

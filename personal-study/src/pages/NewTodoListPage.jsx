@@ -10,7 +10,7 @@ function NewTodoListPage() {
       <PageBtn />
       <ModalBtn
         title="NewTodoList"
-        content="반갑습니다. NewTodoList 페이지입니다."
+        text="반갑습니다. NewTodoList 페이지입니다."
       />
     </div>
   );

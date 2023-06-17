@@ -8,7 +8,6 @@ import { AiOutlineMenu } from "react-icons/ai";
 // import { useDispatch } from "react-redux";
 import { BrowserRouter, Link, Route, Router, Routes } from "react-router-dom";
 import styled from "styled-components";
-// import { close } from "../redux/slice/modalSlice";
 import ModalBtn from "../components/ModalBtn";
 import { useState } from "react";
 import UiPages from "./UiPageLink";
@@ -56,7 +55,7 @@ function MainPage({ component }) {
           </div>
         </div>
       </div>
-      <ModalBtn title="main" content="반갑습니다. main페이지입니다." />
+      <ModalBtn title="main" text="반갑습니다. main페이지입니다." />
     </div>
   );
 }

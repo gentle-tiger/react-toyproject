@@ -32,6 +32,7 @@ function UiPageLink() {
           </CustomLink>
           <CustomLink to="/colors">Colors</CustomLink>
           <CustomLink to="/modal">Modal</CustomLink>
+          <CustomLink to="/catInfo">CatInfo</CustomLink>
         </div>
       </div>
       {/* <div css={uiPageNav}>

@@ -1,25 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-
-import React from "react";
-import Counter from "../components/Counter";
-import { Link } from "react-router-dom";
 import PageBtn from "../components/PageBtn";
 import ModalBtn from "../components/ModalBtn";
+import CatInfo from "../components/CatInfo";
 
-function CounterPage() {
+function CatInfoPage() {
   return (
-    <div css={counterPageCss}>
-      <Counter />
+    <div css={catInfoPageCss}>
+      <CatInfo />
       <PageBtn />
-      <ModalBtn title="counter" text="counter페이지입니다." />
+      <ModalBtn title="catInfo" text="catInfo페이지입니다.!" />
     </div>
   );
 }
 
-export default CounterPage;
-const counterPageCss = css`
+export default CatInfoPage;
+const catInfoPageCss = css`
   display: flex;
   flex-direction: column;
   justify-content: center;

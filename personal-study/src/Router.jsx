@@ -10,6 +10,7 @@ import ColorsPage from "./pages/ColorsPage";
 import NewExpandingCardPage from "./pages/NewExpandingCardPage";
 import ModalPage from "./pages/ModalPage";
 import ExpandingSearchInputPage from "./pages/ExpandingSearchInputPage";
+import CatInfoPage from "./pages/CatInfoPage";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function Router() {
         />
         <Route path="/colors" element={<ColorsPage />} />
         <Route path="/modal" element={<ModalPage />} />
+        <Route path="/catInfo" element={<CatInfoPage />} />
       </Routes>
     </BrowserRouter>
   );

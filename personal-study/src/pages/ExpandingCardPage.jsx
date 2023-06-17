@@ -8,7 +8,7 @@ import PageBtn from "../components/PageBtn";
 import NewButton from "../components/NewTodoList/NewButton";
 import ModalBtn from "../components/ModalBtn";
 import { useDispatch, useSelector } from "react-redux";
-import { close, test } from "../redux/slice/modalSlice";
+import { close, test } from "../redux/slice/layoutSlice";
 import ModalPage from "./ModalPage";
 import Modal from "../components/Modal";
 
@@ -19,7 +19,7 @@ function ExpandingCardPage() {
       <PageBtn />
       <ModalBtn
         title="expandingPage"
-        content="반갑습니다. expandingPage페이지입니다."
+        text="반갑습니다. expandingPage페이지입니다."
       />
     </div>
   );
