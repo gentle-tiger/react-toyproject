@@ -12,6 +12,7 @@ import store from "./redux/store";
 import Modal from "./components/Modal";
 import NewButton from "./components/NewTodoList/NewButton";
 import ModalBtn from "./components/ModalBtn";
+import MainPage from "./pages/MainPage";
 // import NewButton from "./components/NewTodoList/NewButton";
 // import Button from "./components/Button";
 
