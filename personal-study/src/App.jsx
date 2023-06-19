@@ -13,17 +13,20 @@ import Modal from "./components/Modal";
 import NewButton from "./components/NewTodoList/NewButton";
 import ModalBtn from "./components/ModalBtn";
 import MainPage from "./pages/MainPage";
+import ModalContext from "./content/ModalContext";
 // import NewButton from "./components/NewTodoList/NewButton";
 // import Button from "./components/Button";
 
 function App() {
   console.log("App Reder되었당!!!");
-  const { showModal } = useSelector((store) => store.modal);
-  // const { text } = useSelector((store) => store.modal);
+
   return (
     <div>
-      <Router />
-      {showModal && <Modal title="title" content="content" />}
+      <Provider store={store}>
+        <ModalContext>
+          <Router />
+        </ModalContext>
+      </Provider>
     </div>
   );
 }
