@@ -39,7 +39,7 @@ function MainPage({ component }) {
           <h1>{Title}</h1>
         </div>
         <div css={btnHeader}>
-          <Button onClick={handleClickOpenUiPages}>
+          <Button css={pageInfoBtn} onClick={handleClickOpenUiPages}>
             <AiOutlineMenu font={200} />
           </Button>
         </div>
@@ -83,6 +83,7 @@ const btnHeader = css`
   background-color: #ffffff;
   color: #000000;
 `;
+const pageInfoBtn = css``;
 
 // Info 와 page 화면을 구분해 놓은 컨텐츠
 const contentsCss = css`
