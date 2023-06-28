@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "imgUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    "name": "Caroline",
+    "text": "Hey there, I'm Caroline! I live in a cozy suburban neighborhood surrounded by nature's wonders. Exploring the outdoors and going hiking are my passions. My goal is to inspire people to appreciate the beauty of the natural world and promote sustainable living practices. By advocating for environmental conservation, I strive to contribute to a greener and more harmonious planet.",
+    "isActive": false
+  },
+  {
+    "id": "2",
+    "imgUrl": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    "name": "Jonas Kakaroto",
+    "text": "Hey there, I'm Jonas Kakaroto! I reside in a small town surrounded by nature's beauty. I'm passionate about playing guitar and composing music. My objective is to travel the world, experience different cultures, and spread joy through my melodies.",
+    "isActive": false
+  },
+  {
+    "id": "3",
+    "imgUrl": "https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
+    "name": "Matheus Ferrero",
+    "text": "Hello, I'm Matheus Ferrero! I call a bustling metropolis my home. I find solace in photography and capturing unique moments. My aspiration is to inspire others through my visual storytelling and contribute to environmental conservation.",
+    "isActive": false
+  },
+  {
+    "id": "4",
+    "imgUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80",
+    "name": "Stefan Stefanclk",
+    "text": "Greetings, I'm Stefan Stefanclk! I live in a charming coastal town with breathtaking beaches. Surfing and skateboarding are my favorite pastimes. My aim is to promote an active lifestyle and raise awareness about sustainable living.",
+    "isActive": false
+  },
+  {
+    "id": "5",
+    "imgUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80",
+    "name": "Christina",
+    "text": "Hi, I'm Christina! I live in a vibrant city and enjoy exploring its diverse neighborhoods. My hobbies include painting and reading. My goal is to become a successful entrepreneur and make a positive impact on society.",
+    "isActive": false
+  },
+  {
+    "id": "6",
+    "imgUrl": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=600&q=60",
+    "name": "Austin Wade",
+    "text": "Hey, I'm Austin Wade! I call a picturesque countryside my home. I enjoy gardening and woodworking. My objective is to live a self-sufficient lifestyle and promote sustainable farming practices to ensure a greener future.",
+    "isActive": false
+  }
+]

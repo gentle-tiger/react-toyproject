@@ -33,6 +33,7 @@ function UiPageLink() {
           <CustomLink to="/colors">Colors</CustomLink>
           <CustomLink to="/modal">Modal</CustomLink>
           <CustomLink to="/catInfo">CatInfo</CustomLink>
+          <CustomLink to="/staggerEffect">StaggerEffect</CustomLink>
         </div>
       </div>
       {/* <div css={uiPageNav}>

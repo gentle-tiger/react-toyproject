@@ -11,6 +11,7 @@ import NewExpandingCardPage from "./pages/NewExpandingCardPage";
 import ModalPage from "./pages/ModalPage";
 import ExpandingSearchInputPage from "./pages/ExpandingSearchInputPage";
 import CatInfoPage from "./pages/CatInfoPage";
+import StaggerEffectPage from "./pages/StaggerEffectPage";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
         <Route path="/colors" element={<ColorsPage />} />
         <Route path="/modal" element={<ModalPage />} />
         <Route path="/catInfo" element={<CatInfoPage />} />
+        <Route path="/staggerEffect" element={<StaggerEffectPage />} />
       </Routes>
     </BrowserRouter>
   );
