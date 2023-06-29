@@ -62,29 +62,46 @@ const wrapperCss = css`
   align-items: center;
   width: 100vw;
   height: 600px;
-  background-color: #b00020;
+  background-color: lightgrey;
 `;
 const contentWrapperCss = css`
-  width: 330px;
+  width: 350px;
   height: 500px;
-  padding: 30px 0px 30px 15px; // scroll 을 제외한 나머지에만 값을 추가함.
-  background-color: white;
-  overflow: scroll;
-  border: 3px solid black;
+  padding: 30px 0px 30px 5px; // scroll 을 제외한 나머지에만 값을 추가함.
+  background-color: lightgrey;
+  overflow-y: scroll;
   scrollbar-width: none;
   &::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
+    background-color: lightgrey;
     transition: background-color 0.3s ease;
   }
-
   &::-webkit-scrollbar {
-    width: calc(100% + 10px);
-    background-color: #ffffff;
+    /* width: calc(100% + 10px); */
+    background-color: lightgrey;
   }
-
   &:hover::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #b8b8b8;
+    background-color: white;
     transition: background-color 0.3s ease;
+  }
+  /* 스크롤 모양 변경 */
+  ::-webkit-scrollbar {
+    width: 10px; // 스크롤 너비
+    background-color: red; /* 스크롤 바탕색 */
+  }
+
+  /* 스크롤 핸들 모양 변경 */
+  ::-webkit-scrollbar-thumb {
+    background-color: red; /* 스크롤 핸들 색상 */
+  }
+
+  /* 스크롤 버튼 모양 변경 */
+  ::-webkit-scrollbar-button {
+    background-color: red; /* 스크롤 버튼 색상 */
+  }
+
+  /* 스크롤 트랙 모양 변경 */
+  ::-webkit-scrollbar-track {
+    background-color: red; /* 스크롤 트랙 색상 */
   }
 `;

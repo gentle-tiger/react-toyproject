@@ -46,7 +46,6 @@ const contentCss = (isActive) => css`
   align-items: center;
   justify-content: center;
   margin: 5px auto 0px 5px;
-  background-color: lightblue;
   user-select: none;
 `;
 // img + name
@@ -55,7 +54,7 @@ const personInfoWapperCss = (isActive) => css`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: lightblue;
+  background-color: #ffde03; // img 백그라운드.
   width: 300px;
   height: ${isActive ? "200px" : "50px"}; // 분홍색 백그라운드 크기
   user-select: none;
@@ -82,7 +81,7 @@ const nameWapperCss = (isActive) => css`
   position: relative;
   display: flex;
   width: 300px;
-  background-color: lightblue;
+  background-color: #ffde03;
   padding: ${isActive ? "0 0px 0 20px" : "0 0 0 10px"};
   font-size: ${isActive ? "2rem" : "null"};
   text-decoration: ${isActive ? "underline" : "null"};
@@ -95,7 +94,7 @@ const nameWapperCss = (isActive) => css`
 const textContentCss = (isActive) => css`
   transition: all ease 0.5s 0s;
   position: sticky;
-  background-color: lightblue;
+  background-color: #0336ff;
   width: 300px;
   margin: 0;
   user-select: none;
