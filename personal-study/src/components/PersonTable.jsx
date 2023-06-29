@@ -95,6 +95,7 @@ const textContentCss = (isActive) => css`
   transition: all ease 0.5s 0s;
   position: sticky;
   background-color: #0336ff;
+  color: white;
   width: 300px;
   margin: 0;
   user-select: none;

@@ -76,7 +76,7 @@ const contentWrapperCss = css`
     transition: background-color 0.3s ease;
   }
   &::-webkit-scrollbar {
-    /* width: calc(100% + 10px); */
+    width: calc(100% + 10px);
     background-color: lightgrey;
   }
   &:hover::-webkit-scrollbar-thumb {
@@ -84,24 +84,7 @@ const contentWrapperCss = css`
     background-color: white;
     transition: background-color 0.3s ease;
   }
-  /* 스크롤 모양 변경 */
-  ::-webkit-scrollbar {
-    width: 10px; // 스크롤 너비
-    background-color: red; /* 스크롤 바탕색 */
-  }
-
-  /* 스크롤 핸들 모양 변경 */
-  ::-webkit-scrollbar-thumb {
-    background-color: red; /* 스크롤 핸들 색상 */
-  }
-
-  /* 스크롤 버튼 모양 변경 */
-  ::-webkit-scrollbar-button {
-    background-color: red; /* 스크롤 버튼 색상 */
-  }
-
-  /* 스크롤 트랙 모양 변경 */
-  ::-webkit-scrollbar-track {
-    background-color: red; /* 스크롤 트랙 색상 */
+  :hover {
+    border: 2px solid grey;
   }
 `;
