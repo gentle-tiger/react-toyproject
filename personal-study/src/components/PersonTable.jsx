@@ -45,9 +45,9 @@ const contentCss = (isActive) => css`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px auto 0px 10px;
+  margin: 5px auto 0px 5px;
+  background-color: lightblue;
   user-select: none;
-  border: 1px solid ${isActive ? "null" : "lightgrey"};
 `;
 // img + name
 const personInfoWapperCss = (isActive) => css`
@@ -55,9 +55,9 @@ const personInfoWapperCss = (isActive) => css`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: ${isActive ? "#f6d4e0" : "#ffff"};
+  background-color: lightblue;
   width: 300px;
-  height: ${isActive ? "200px" : "70px"}; // 분홍색 백그라운드 크기
+  height: ${isActive ? "200px" : "50px"}; // 분홍색 백그라운드 크기
   user-select: none;
   transition: all ease 0.5s 0s;
   cursor: pointer;
@@ -66,8 +66,8 @@ const personInfoWapperCss = (isActive) => css`
 `;
 // img
 const imgsCss = (isActive) => css`
-  width: ${isActive ? "100px" : "50px"};
-  height: ${isActive ? "100px" : "50px"};
+  width: ${isActive ? "70px" : "50px"};
+  height: ${isActive ? "70px" : "50px"};
   object-fit: cover;
   border-radius: 50px;
   transform: ${isActive
@@ -81,12 +81,13 @@ const imgsCss = (isActive) => css`
 const nameWapperCss = (isActive) => css`
   position: relative;
   display: flex;
-  background-color: ${isActive ? "#f6d4e0" : "#ffff"};
-  padding: ${isActive ? "0 0px 0 20px" : "0 0 0 10px"};
   width: 300px;
+  background-color: lightblue;
+  padding: ${isActive ? "0 0px 0 20px" : "0 0 0 10px"};
   font-size: ${isActive ? "2rem" : "null"};
-  white-space: nowrap;
+  text-decoration: ${isActive ? "underline" : "null"};
   transition: all ease 0.5s 0s;
+  white-space: nowrap;
   cursor: pointer;
 `;
 
@@ -94,7 +95,7 @@ const nameWapperCss = (isActive) => css`
 const textContentCss = (isActive) => css`
   transition: all ease 0.5s 0s;
   position: sticky;
-  background-color: #d8b2ee;
+  background-color: lightblue;
   width: 300px;
   margin: 0;
   user-select: none;

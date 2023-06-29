@@ -60,15 +60,14 @@ const wrapperCss = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
-  height: 800px;
+  width: 100vw;
+  height: 600px;
   background-color: #b00020;
-  margin: 0 auto;
 `;
 const contentWrapperCss = css`
-  width: 400px;
-  height: 600px;
-  padding: 30px 0px;
+  width: 330px;
+  height: 500px;
+  padding: 30px 0px 30px 15px; // scroll 을 제외한 나머지에만 값을 추가함.
   background-color: white;
   overflow: scroll;
   border: 3px solid black;
