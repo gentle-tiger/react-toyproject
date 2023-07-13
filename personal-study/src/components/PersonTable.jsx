@@ -31,7 +31,12 @@ function PersonTable({
         </div>
 
         <div css={textContentCss(isActive)}>
-          <p css={paragraphCss(isActive)}>{text}</p>
+          <p
+            css={paragraphCss(isActive)}
+            onClick={() => handleClickInfoOpen(id)}
+          >
+            {text}
+          </p>
         </div>
       </div>
     </div>
@@ -43,9 +48,7 @@ export default PersonTable;
 const contentCss = (isActive) => css`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 5px auto 0px 5px;
+  margin: 5px 0px 0px 5px;
   user-select: none;
 `;
 // img + name
@@ -56,25 +59,21 @@ const personInfoWapperCss = (isActive) => css`
   flex-direction: column;
   background-color: #ffde03; // img 백그라운드.
   width: 300px;
-  height: ${isActive ? "200px" : "50px"}; // 분홍색 백그라운드 크기
+  height: ${isActive ? "200px" : "70px"};
   user-select: none;
   transition: all ease 0.5s 0s;
-  cursor: pointer;
-
-  /* will-change: transform; */
 `;
 // img
 const imgsCss = (isActive) => css`
-  width: ${isActive ? "70px" : "50px"};
-  height: ${isActive ? "70px" : "50px"};
+  width: ${isActive ? "100px" : "60px"};
+  height: ${isActive ? "100px" : "60px"};
   object-fit: cover;
-  border-radius: 50px;
+  border-radius: 50%;
   transform: ${isActive
     ? "none"
-    : "translate(-230%, 0%)"}; // 기존으로 돌아오는 것임.
+    : "translate(-180%, 0%)"}; // 기존으로 돌아오는 것임.
   transition: all ease 0.5s 0s;
   user-select: none;
-  will-change: transform;
 `;
 // name (span 태그)
 const nameWapperCss = (isActive) => css`
@@ -83,7 +82,7 @@ const nameWapperCss = (isActive) => css`
   width: 300px;
   background-color: #ffde03;
   padding: ${isActive ? "0 0px 0 20px" : "0 0 0 10px"};
-  font-size: ${isActive ? "2rem" : "null"};
+  font-size: ${isActive ? "30px" : "null"};
   text-decoration: ${isActive ? "underline" : "null"};
   transition: all ease 0.5s 0s;
   white-space: nowrap;
@@ -93,12 +92,13 @@ const nameWapperCss = (isActive) => css`
 // 텍스트를 감싸고 있는 태그
 const textContentCss = (isActive) => css`
   transition: all ease 0.5s 0s;
-  position: sticky;
   background-color: #0336ff;
   color: white;
   width: 300px;
   margin: 0;
   user-select: none;
+  font-size: 20px;
+  cursor: pointer;
 `;
 const paragraphCss = (isActive) => css`
   height: ${isActive ? "200px" : "0px"};

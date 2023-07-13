@@ -61,10 +61,9 @@ function Colors() {
 export default Colors;
 
 const colors = css`
-  box-sizing: border-box;
   display: grid;
-  width: 100vw;
-  height: 100vh;
+  width: 300px;
+  height: 400px;
   background-color: #ffffff;
   grid-template-rows: 1fr 3fr 1fr;
   grid-template-areas:

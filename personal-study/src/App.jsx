@@ -14,6 +14,7 @@ import NewButton from "./components/NewTodoList/NewButton";
 import ModalBtn from "./components/ModalBtn";
 import MainPage from "./pages/MainPage";
 import ModalContext from "./content/ModalContext";
+import { BrowserRouter, Routes } from "react-router-dom";
 // import NewButton from "./components/NewTodoList/NewButton";
 // import Button from "./components/Button";
 
@@ -23,9 +24,11 @@ function App() {
   return (
     <div>
       <Provider store={store}>
-        <ModalContext>
-          <Router />
-        </ModalContext>
+        <BrowserRouter>
+          <ModalContext>
+            <MainPage />
+          </ModalContext>
+        </BrowserRouter>
       </Provider>
     </div>
   );

@@ -9,8 +9,8 @@ import NewButton from "../components/NewTodoList/NewButton";
 import ModalBtn from "../components/ModalBtn";
 import { useDispatch, useSelector } from "react-redux";
 import { close, test } from "../redux/slice/layoutSlice";
-import ModalPage from "./ModalPage";
-import Modal from "../components/Modal";
+// import ModalPage from "./ModalPage";
+// import Modal from "../components/Modal";
 
 function ExpandingCardPage() {
   return (

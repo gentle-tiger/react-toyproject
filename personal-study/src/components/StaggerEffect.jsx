@@ -60,31 +60,36 @@ const wrapperCss = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 600px;
-  background-color: lightgrey;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 `;
 const contentWrapperCss = css`
+  display: flex;
+  justify-content: center;
+  align-items: start; // 이렇게 해야 content가 위로 잘리지 않는다.
   width: 350px;
   height: 500px;
   padding: 30px 0px 30px 5px; // scroll 을 제외한 나머지에만 값을 추가함.
-  background-color: lightgrey;
+  background-color: white;
   overflow-y: scroll;
   scrollbar-width: none;
   &::-webkit-scrollbar-thumb {
-    background-color: lightgrey;
     transition: background-color 0.3s ease;
+    :hover {
+      background-color: lightgrey;
+    }
   }
   &::-webkit-scrollbar {
     width: calc(100% + 10px);
-    background-color: lightgrey;
+    background-color: white;
   }
   &:hover::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: white;
+    background-color: lightgrey;
     transition: background-color 0.3s ease;
   }
   :hover {
-    border: 2px solid grey;
+    outline: grey solid;
   }
 `;
