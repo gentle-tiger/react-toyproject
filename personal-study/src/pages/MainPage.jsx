@@ -281,11 +281,15 @@ const infoItems = (isInfoOpend) => css`
   display: ${isInfoOpend ? "none" : "flex"};
   transition: all 0.2s cubic-bezier(0.7, 0, 0.3, 1);
   padding-left: 10px;
-  text-decoration: none;
-
+  // navlink
+  a {
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px 0 5px 5px;
+  }
   .active {
-    background-color: black;
-    background-size: contain;
+    background-color: #46ce3a;
+    text-decoration: none;
     color: white;
   }
 `;
